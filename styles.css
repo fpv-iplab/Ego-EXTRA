@@ -1,3 +1,23 @@
+/* LinkedIn button style */
+.linkedin-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 14px;
+    background: #0077b5;
+    color: #fff !important;
+    border-radius: 4px;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background 0.2s;
+    font-weight: 500;
+}
+.linkedin-btn i {
+    margin-right: 6px;
+}
+.linkedin-btn:hover {
+    background: #005983;
+    color: #fff;
+}
 /* Reset and Base Styles */
 * {
     margin: 0;
