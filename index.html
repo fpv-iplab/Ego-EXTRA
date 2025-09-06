@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ego-EXTRA: Video-Language Egocentric Dataset for Expert-Trainee Assistance</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Ego-EXTRA</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#stats" class="nav-link">Dataset Stats</a></li>
+                <li><a href="#examples" class="nav-link">Examples</a></li>
+                <li><a href="#benchmark" class="nav-link">Benchmark</a></li>
+                <li><a href="#download" class="nav-link">Download</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Ego-EXTRA</h1>
+                <p class="hero-subtitle">Video-Language Egocentric Dataset for EXpert-TRAinee assistance</p>
+                
+                <!-- Authors Section -->
+                <div class="authors-section">
+                    <div class="authors-list">
+                        <div class="author-names">
+                            <span class="author-name">Francesco Ragusa*</span><sup>1</sup>,
+                            <span class="author-name">Michele Mazzamuto*</span><sup>1</sup>,
+                            <span class="author-name">Rosario Forte</span><sup>1</sup>,
+                            <span class="author-name">Irene D'Ambra</span><sup>1</sup>,
+                            <span class="author-name">James Fort</span><sup>2</sup>,
+                            <span class="author-name">Jakob Engel</span><sup>2</sup>,
+                            <span class="author-name">Antonino Furnari</span><sup>1</sup>,
+                            <span class="author-name">Giovanni Maria Farinella</span><sup>1</sup>
+                        </div>
+                    </div>
+                    <p class="co-first-note">* Co-first authors</p>
+                    <div class="affiliations">
+                        <div class="affiliation">
+                            <sup>1</sup> University of Catania
+                        </div>
+                        <div class="affiliation">
+                            <sup>2</sup> META Reality Labs
+                        </div>
+                    </div>
+                </div>
+                
+                <p class="hero-description">
+                    A novel dataset featuring 50 hours of unscripted egocentric videos with natural expert-trainee conversations, 
+                    designed to evaluate multimodal large language models for wearable assistive systems.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">Download Dataset</a>
+                    <a href="#overview" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="video-placeholder">
+                    <i class="fas fa-play-circle"></i>
+                    <p>Sample Video Preview</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="overview">
+        <div class="container">
+            <h2 class="section-title">Dataset Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>50 Hours of Video</h3>
+                    <p>Unscripted egocentric videos captured using Aria glasses with rich multimodal signals including RGB, SLAM, eye gaze, IMU, and audio.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Natural Conversations</h3>
+                    <p>Real-time expert-trainee dialogues following "Wizard of Oz" paradigm, providing authentic guidance and assistance.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>4 Scenarios</h3>
+                    <p>Bike Workshop, Kitchen, Bakery, and Assembly scenarios with 10 different procedural activities.</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>45K+ QA Sets</h3>
+                    <p>High-quality Visual Question Answering benchmark with 45,198 realistic expert-trainee question-answer pairs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dataset Stats Section -->
+    <section id="stats" class="stats">
+        <div class="container">
+            <h2 class="section-title">Dataset Statistics</h2>
+            
+            <!-- First Row - Single Image (Participant Demographics) -->
+            <div class="stats-row single">
+                <div class="stat-content">
+                    <h3>Participant Demographics</h3>
+                    <img src="img/demographics.png" alt="Participant Demographics" />
+                    <p>Diverse group of 33 trainees and 4 experts across 19 distinct occupations, ensuring representative data collection.</p>
+                </div>
+            </div>
+
+            <!-- Second Row - Two Images -->
+            <div class="stats-row double">
+                <div class="stat-content">
+                    <h3>Video Statistics</h3>
+                    <img src="img/vids_stats.png" alt="Video Statistics" />
+                    <p>Distribution of video hours across different scenarios and activities, showing the comprehensive coverage of procedural tasks.</p>
+                </div>
+                <div class="stat-content">
+                    <h3>Conversation Turns</h3>
+                    <img src="img/turns_stats.png" alt="Conversation Turns Statistics" />
+                    <p>Analysis of conversation patterns between experts and trainees, highlighting the natural flow of instructional dialogue.</p>
+                </div>
+            </div>
+
+            <!-- Third Row - Two Images -->
+            <div class="stats-row double">
+                <div class="stat-content">
+                    <h3>Trainee Language Patterns</h3>
+                    <img src="img/trainee_language.png" alt="Trainee Language Analysis" />
+                    <p>Analysis of trainee language usage, showing common verbs, nouns, and question patterns during procedural tasks.</p>
+                </div>
+                <div class="stat-content">
+                    <h3>Expert Language Patterns</h3>
+                    <img src="img/expert_language.png" alt="Expert Language Analysis" />
+                    <p>Expert language analysis revealing instructional patterns, guidance strategies, and domain-specific terminology.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="examples">
+        <div class="container">
+            <h2 class="section-title">Dataset Examples</h2>
+            <div class="examples-tabs">
+                <button class="tab-btn active" data-tab="bike">Bike Workshop</button>
+                <button class="tab-btn" data-tab="kitchen">Kitchen</button>
+                <button class="tab-btn" data-tab="bakery">Bakery</button>
+                <button class="tab-btn" data-tab="assembly">Assembly</button>
+            </div>
+            
+            <div class="tab-content active" id="bike">
+                <div class="example-grid">
+                    <div class="example-video">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play"></i>
+                            <p>Bike Brake Pad Replacement</p>
+                        </div>
+                    </div>
+                    <div class="example-qa">
+                        <h4>Sample Q&A</h4>
+                        <div class="qa-item">
+                            <p class="question"><strong>Trainee:</strong> "Which of the two wheels should I remove?"</p>
+                            <p class="answer"><strong>Expert:</strong> "The front wheel."</p>
+                        </div>
+                        <div class="qa-item">
+                            <p class="question"><strong>Trainee:</strong> "What tool should I use to tighten the black bolt?"</p>
+                            <p class="answer"><strong>Expert:</strong> "Use the wrench that's in the second chest on your left."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="kitchen">
+                <div class="example-grid">
+                    <div class="example-video">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play"></i>
+                            <p>Making Lasagna</p>
+                        </div>
+                    </div>
+                    <div class="example-qa">
+                        <h4>Sample Q&A</h4>
+                        <div class="qa-item">
+                            <p class="question"><strong>Trainee:</strong> "How much flour should I weigh on the scale?"</p>
+                            <p class="answer"><strong>Expert:</strong> "You need to weigh 1.5 Kg of flour."</p>
+                        </div>
+                        <div class="qa-item">
+                            <p class="question"><strong>Trainee:</strong> "Is this fine or should I add more?"</p>
+                            <p class="answer"><strong>Expert:</strong> "Add a little more."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="bakery">
+                <div class="example-grid">
+                    <div class="example-video">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play"></i>
+                            <p>Making Tart</p>
+                        </div>
+                    </div>
+                    <div class="example-qa">
+                        <h4>Sample Q&A</h4>
+                        <div class="qa-item">
+                            <p class="question"><strong>Trainee:</strong> "Where should the tray with the cookies be placed in the oven?"</p>
+                            <p class="answer"><strong>Expert:</strong> "They go to the bottom."</p>
+                        </div>
+                        <div class="qa-item">
+                            <p class="question"><strong>Trainee:</strong> "How should the dough be shaped?"</p>
+                            <p class="answer"><strong>Expert:</strong> "We can quietly make this kind of serpentine shape."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="assembly">
+                <div class="example-grid">
+                    <div class="example-video">
+                        <div class="video-placeholder">
+                            <i class="fas fa-play"></i>
+                            <p>Assembling Chest of Drawers</p>
+                        </div>
+                    </div>
+                    <div class="example-qa">
+                        <h4>Sample Q&A</h4>
+                        <div class="qa-item">
+                            <p class="question"><strong>Trainee:</strong> "What should I do with the wooden pegs?"</p>
+                            <p class="answer"><strong>Expert:</strong> "You can insert them into the large holes."</p>
+                        </div>
+                        <div class="qa-item">
+                            <p class="question"><strong>Trainee:</strong> "How do I know that it's attached?"</p>
+                            <p class="answer"><strong>Expert:</strong> "Try turning it slightly. You should hear a click."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benchmark Section -->
+    <section id="benchmark" class="benchmark">
+        <div class="container">
+            <h2 class="section-title">VQA Benchmark Results</h2>
+            <div class="benchmark-content">
+                <div class="benchmark-stats">
+                    <div class="stat-item">
+                        <h3>45,198</h3>
+                        <p>QA Sets</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>89.65%</h3>
+                        <p>Human Baseline</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>41.38%</h3>
+                        <p>Best MLLM</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24.54%</h3>
+                        <p>Best LLM</p>
+                    </div>
+                </div>
+                <div class="benchmark-table">
+                    <h4>Model Performance by Scenario</h4>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Bike Workshop</th>
+                                    <th>Bakery</th>
+                                    <th>Assembly</th>
+                                    <th>Kitchen</th>
+                                    <th>Average</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="human-baseline">
+                                    <td><strong>Human Baseline</strong></td>
+                                    <td>87.50%</td>
+                                    <td>90.91%</td>
+                                    <td>100%</td>
+                                    <td>81.82%</td>
+                                    <td><strong>89.65%</strong></td>
+                                </tr>
+                                <tr class="best-model">
+                                    <td><strong>LLaVa-OneVision</strong></td>
+                                    <td>38.89%</td>
+                                    <td>42.86%</td>
+                                    <td>42.86%</td>
+                                    <td>44.44%</td>
+                                    <td><strong>41.38%</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>MiniGPT4-video</td>
+                                    <td>30.00%</td>
+                                    <td>29.55%</td>
+                                    <td>27.93%</td>
+                                    <td>41.30%</td>
+                                    <td>30.03%</td>
+                                </tr>
+                                <tr>
+                                    <td>LLaVa Video</td>
+                                    <td>27.78%</td>
+                                    <td>38.57%</td>
+                                    <td>29.10%</td>
+                                    <td>27.78%</td>
+                                    <td>29.82%</td>
+                                </tr>
+                                <tr>
+                                    <td>Qwen 2.5-VL</td>
+                                    <td>29.80%</td>
+                                    <td>31.43%</td>
+                                    <td>28.57%</td>
+                                    <td>25.00%</td>
+                                    <td>29.21%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">Download Dataset</h2>
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Full Dataset</h3>
+                    <p>Complete Ego-EXTRA dataset with all videos, transcripts, and multimodal signals</p>
+                    <div class="download-info">
+                        <span class="size">~500GB</span>
+                        <span class="format">MP4, JSON, TXT</span>
+                    </div>
+                    <button class="btn btn-primary download-btn" data-type="full">
+                        <i class="fas fa-download"></i>
+                        Download Full Dataset
+                    </button>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <h3>VQA Benchmark</h3>
+                    <p>Visual Question Answering benchmark with 45,198 QA sets and evaluation scripts</p>
+                    <div class="download-info">
+                        <span class="size">~50MB</span>
+                        <span class="format">JSON, Python</span>
+                    </div>
+                    <button class="btn btn-primary download-btn" data-type="benchmark">
+                        <i class="fas fa-download"></i>
+                        Download Benchmark
+                    </button>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Paper & Documentation</h3>
+                    <p>Research paper, dataset documentation, and usage guidelines</p>
+                    <div class="download-info">
+                        <span class="size">~10MB</span>
+                        <span class="format">PDF, MD</span>
+                    </div>
+                    <button class="btn btn-primary download-btn" data-type="docs">
+                        <i class="fas fa-download"></i>
+                        Download Documentation
+                    </button>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Code & Scripts</h3>
+                    <p>Evaluation scripts, data processing tools, and example implementations</p>
+                    <div class="download-info">
+                        <span class="size">~5MB</span>
+                        <span class="format">Python, Shell</span>
+                    </div>
+                    <button class="btn btn-primary download-btn" data-type="code">
+                        <i class="fas fa-download"></i>
+                        Download Code
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- People Section -->
+    <section class="people">
+        <div class="container">
+            <h2 class="section-title">Research Team</h2>
+            <div class="people-grid">
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="img/faces/FR.jpg" alt="Francesco Ragusa" />
+                    </div>
+                    <h3>Francesco Ragusa</h3>
+                    <p>Co-First Author</p>
+                    <p class="affiliation">University of Catania</p>
+                </div>
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="img/faces/MM.jpg" alt="Michele Mazzamuto" />
+                    </div>
+                    <h3>Michele Mazzamuto</h3>
+                    <p>Co-First Author</p>
+                    <p class="affiliation">University of Catania</p>
+                </div>
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="img/faces/RF.jpg" alt="Rosario Forte" />
+                    </div>
+                    <h3>Rosario Forte</h3>
+                    <p>Researcher</p>
+                    <p class="affiliation">University of Catania</p>
+                </div>
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="img/faces/ID.jpeg" alt="Irene D'Ambra" />
+                    </div>
+                    <h3>Irene D'Ambra</h3>
+                    <p>Researcher</p>
+                    <p class="affiliation">University of Catania</p>
+                </div>
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="img/faces/JF.jpg" alt="James Fort" />
+                    </div>
+                    <h3>James Fort</h3>
+                    <p>Research Scientist</p>
+                    <p class="affiliation">META Reality Labs</p>
+                </div>
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="img/faces/JE.jpg" alt="Jakob Engel" />
+                    </div>
+                    <h3>Jakob Engel</h3>
+                    <p>Research Scientist</p>
+                    <p class="affiliation">META Reality Labs</p>
+                </div>
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="img/faces/AF.jpg" alt="Antonino Furnari" />
+                    </div>
+                    <h3>Antonino Furnari</h3>
+                    <p>Senior Researcher</p>
+                    <p class="affiliation">University of Catania</p>
+                </div>
+                <div class="person-card">
+                    <div class="person-image">
+                        <img src="img/faces/GMF.jpg" alt="Giovanni Maria Farinella" />
+                    </div>
+                    <h3>Giovanni Maria Farinella</h3>
+                    <p>Principal Investigator</p>
+                    <p class="affiliation">University of Catania</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Citation Section -->
+    <section class="citation">
+        <div class="container">
+            <h2 class="section-title">Citation</h2>
+            <div class="citation-content">
+                <div class="citation-box">
+                    <pre id="bibtex">@inproceedings{ragusa2025egoextra,
+    title={Ego-EXTRA: Video-Language Egocentric Dataset for EXpert-TRAinee assistance},
+    author={Ragusa, Francesco and Mazzamuto, Michele and Forte, Rosario and D'Ambra, Irene and Fort, James and Engel, Jakob and Furnari, Antonino and Farinella, Giovanni Maria},
+    booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+    year={2025}
+}</pre>
+                    <button class="btn btn-primary copy-btn" onclick="copyBibtex()">
+                        <i class="fas fa-copy"></i>
+                        Copy BibTeX
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Ego-EXTRA</h3>
+                    <p>Video-Language Egocentric Dataset for Expert-Trainee Assistance</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#stats">Dataset Stats</a></li>
+                        <li><a href="#examples">Examples</a></li>
+                        <li><a href="#benchmark">Benchmark</a></li>
+                        <li><a href="#download">Download</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>For questions about the dataset, please contact the research team.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ego-EXTRA Dataset. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
