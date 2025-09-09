@@ -66,7 +66,7 @@ downloadBtns.forEach(btn => {
             btn.disabled = false;
             
             // Show download notification
-            showNotification('Download started! Check your downloads folder.');
+            showNotification('Cooming soon!');
         }, 2000);
     });
 });
