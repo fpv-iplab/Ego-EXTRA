@@ -636,19 +636,18 @@ tr.best-model td {
 
 .download-card {
     background: white;
-    padding: 40px 32px;
+    padding: 32px;
     border-radius: 20px;
     text-align: center;
     border: 1px solid rgba(52, 152, 219, 0.1);
     transition: all 0.3s ease;
-    height: 100%;
-    min-height: 450px; /* Added min-height for consistent sizing */
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 8px 30px rgba(52, 152, 219, 0.1);
-    flex: 1 1 300px;
-    max-width: 450px;
+    flex: 1 1 300px; /* Allow growing and shrinking, base 300px */
+    max-width: 400px; /* Limit maximum width */
 }
 
 .download-card:hover {
