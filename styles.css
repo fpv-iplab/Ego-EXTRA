@@ -11,13 +11,16 @@
     transition: background 0.2s;
     font-weight: 500;
 }
+
 .linkedin-btn i {
     margin-right: 6px;
 }
+
 .linkedin-btn:hover {
     background: #005983;
     color: #fff;
 }
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -34,9 +37,9 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px; /* Increased from 1200px for less border */
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 12px;
 }
 
 /* Navigation */
@@ -54,7 +57,7 @@ body {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,7 +107,8 @@ body {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Changed from center to move content up */
+    padding-top: 140px; /* Added padding to clear navbar */
     background: linear-gradient(135deg, #f8f9fa 0%, #e8f4fd 100%);
     color: #2c3e50;
     position: relative;
@@ -112,12 +116,19 @@ body {
 }
 
 .hero-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column; /* Stack main content and description */
+    gap: 40px;
+}
+
+/* New wrapper for Title/Authors and Video */
+.hero-main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 0.8fr 1.4fr; /* Video gets more space (bigger video) */
+    gap: 60px;
     align-items: center;
 }
 
@@ -139,6 +150,15 @@ body {
     margin-bottom: 32px;
     color: #34495e;
     letter-spacing: -0.5px;
+}
+
+.hero-description {
+    font-size: 20px; /* Slightly larger text */
+    margin-bottom: 0;
+    color: #57606f;
+    line-height: 1.8;
+    max-width: 100%; /* Full width */
+    text-align: justify;
 }
 
 /* Authors Section */
@@ -193,17 +213,10 @@ body {
     text-align: left;
 }
 
-.hero-description {
-    font-size: 18px;
-    margin-bottom: 40px;
-    color: #7f8c8d;
-    line-height: 1.7;
-    max-width: 500px;
-}
-
 .hero-buttons {
     display: flex;
     gap: 16px;
+    margin-top: 32px; /* Added margin since description is moved */
 }
 
 .btn {
@@ -245,10 +258,19 @@ body {
     box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
 }
 
+.btn:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 0.8;
+}
+
 .hero-visual {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%; /* Ensure it takes full grid cell */
 }
 
 .video-placeholder {
@@ -462,7 +484,7 @@ section {
 
 .example-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.3fr;
     gap: 48px;
     align-items: start;
 }
@@ -561,7 +583,8 @@ table {
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     padding: 20px 24px;
     text-align: left;
     border-bottom: 1px solid rgba(52, 152, 219, 0.1);
@@ -605,8 +628,9 @@ tr.best-model td {
 }
 
 .download-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 32px;
 }
 
@@ -618,10 +642,13 @@ tr.best-model td {
     border: 1px solid rgba(52, 152, 219, 0.1);
     transition: all 0.3s ease;
     height: 100%;
+    min-height: 450px; /* Added min-height for consistent sizing */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-shadow: 0 8px 30px rgba(52, 152, 219, 0.1);
+    flex: 1 1 300px;
+    max-width: 450px;
 }
 
 .download-card:hover {
@@ -690,9 +717,9 @@ tr.best-model td {
 
 .people-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Increased from 200px */
     gap: 24px;
-    max-width: 1000px;
+    max-width: 1200px; /* Increased from 1000px */
     margin: 0 auto;
 }
 
@@ -850,7 +877,7 @@ tr.best-model td {
     .hamburger {
         display: flex;
     }
-    
+
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -863,66 +890,70 @@ tr.best-model td {
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 32px 0;
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
-    .hero-container {
-        grid-template-columns: 1fr;
+
+    .hero-main {
+        grid-template-columns: 1fr; /* Stack on mobile */
         text-align: center;
         gap: 48px;
     }
     
+    .hero-container {
+        gap: 32px;
+    }
+
     .hero-title {
         font-size: 48px;
     }
-    
+
     .hero-buttons {
         justify-content: center;
         flex-wrap: wrap;
     }
-    
+
     .example-grid {
         grid-template-columns: 1fr;
         gap: 32px;
     }
-    
+
     .examples-tabs {
         flex-direction: column;
-        align-items: center;
+        align-items: start;
     }
-    
+
     .tab-btn {
         width: 200px;
     }
-    
+
     .table-container {
         overflow-x: auto;
     }
-    
+
     table {
         min-width: 600px;
     }
-    
+
     .section-title {
         font-size: 36px;
     }
-    
+
     .stats-row {
         flex-direction: column;
         gap: 40px;
         margin-bottom: 60px;
     }
-    
+
     .stats-row.double {
         flex-direction: column;
     }
-    
+
     .stat-content {
         max-width: 100%;
     }
-    
+
     .people-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -933,24 +964,24 @@ tr.best-model td {
     .container {
         padding: 0 16px;
     }
-    
+
     .hero-title {
         font-size: 36px;
     }
-    
+
     .section-title {
         font-size: 28px;
     }
-    
+
     .overview-grid,
     .download-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .benchmark-stats {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .people-grid {
         grid-template-columns: 1fr;
     }
@@ -983,8 +1014,13 @@ html {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Fade in animation */
