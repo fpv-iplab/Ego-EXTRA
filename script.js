@@ -66,7 +66,7 @@ downloadBtns.forEach(btn => {
             btn.disabled = false;
             
             // Show download notification
-            showNotification('Cooming soon!');
+            showNotification('Download started!');
         }, 2000);
     });
 });

@@ -349,20 +349,22 @@
     <section id="download" class="download">
         <div class="container">
             <h2 class="section-title">Download Dataset</h2>
+            <p style="text-align: center; margin-top: -30px; margin-bottom: 30px;">For complete documentation and usage guidelines, please refer to the <a href="https://iplab.dmi.unict.it/sharing2/Ego-EXTRA/egoextra_dataset_release_readme.txt" target="_blank">Ego-EXTRA Documentation</a>.</p>
             <div class="download-grid">
+                
                 <div class="download-card">
                     <div class="download-icon">
                         <i class="fas fa-video"></i>
                     </div>
-                    <h3>Videos</h3>
-                    <p>Egocentric videos captured using Aria glasses (RGB, SLAM, eye gaze, IMU, audio)</p>
+                    <h3>Video Clips</h3>
+                    <p>Egocentric videos clips related to the extracted questions (5s, 15s, 30s)</p>
                     <div class="download-info">
                       <!--  <span class="size">~450GB</span> -->
                       <!--  <span class="format">MP4, JSON</span>-->
                     </div>
                     <button class="btn btn-primary download-btn" data-type="videos">
                         <i class="fas fa-download"></i>
-                        Download Videos
+                        Download Video Clips
                     </button>
                 </div>
                 
@@ -377,10 +379,10 @@
                      <!--   <span class="size">~10MB</span> -->
                       <!--  <span class="format">TXT, JSON</span>-->
                     </div>
-                    <button class="btn btn-primary download-btn" data-type="transcripts">
-                        <i class="fas fa-download"></i>
-                        Download Transcripts
-                    </button>
+                        <button class="btn btn-primary download-btn" onclick="window.location.href='https://iplab.dmi.unict.it/sharing2/Ego-EXTRA/transcript.zip';">
+                            <i class="fas fa-download"></i>
+                            Download Transcripts
+                        </button>
                 </div>
                 
                 <div class="download-card">
@@ -403,18 +405,32 @@
                         <i class="fas fa-question-circle"></i>
                     </div>
                     <h3>VQA Benchmark</h3>
-                    <p>Visual Question Answering benchmark with ~15k QA sets and evaluation scripts</p>
+                    <p>Visual Question Answering benchmark with ~15k QA sets. Including conversation turn and context</p>
                     <div class="download-info">
                         <!--<span class="size">~50MB</span>-->
                       <!--  <span class="format">JSON, Python</span>-->
                     </div>
-                    <button class="btn btn-primary download-btn" data-type="benchmark">
-                        <i class="fas fa-download"></i>
+                     <button class="btn btn-primary download-btn" onclick="window.location.href='https://iplab.dmi.unict.it/sharing2/Ego-EXTRA/questions.zip';">
+                            <i class="fas fa-download"></i>
                         Download Benchmark
                     </button>
                 </div>
                
-                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Videos</h3>
+                    <p>Egocentric videos captured using Aria glasses</p>
+                    <div class="download-info">
+                      <!--  <span class="size">~450GB</span> -->
+                      <!--  <span class="format">MP4, JSON</span>-->
+                    </div>
+                   <button class="btn btn-primary download-btn" data-type="imu" disabled>
+                        <i class="fas fa-clock"></i>
+                        Coming Soon
+                    </button>
+                </div>
                 
                 
                 <div class="download-card" style="text-align: center;">
